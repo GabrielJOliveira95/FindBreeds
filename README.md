@@ -1,6 +1,6 @@
 # FindBreeds
 
-
+The app shows breed of dogs based on the API https://dog.ceo/dog-api/ and when the user selects the dog breed it shows photos of the selected breed 
 
 
 ![WhatsApp Image 2019-11-17 at 22 32 02](https://user-images.githubusercontent.com/46266166/69018289-5dad5980-098a-11ea-9ffb-d0b148900684.jpeg)
