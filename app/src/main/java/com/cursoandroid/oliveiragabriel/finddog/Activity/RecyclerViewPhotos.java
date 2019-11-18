@@ -60,9 +60,11 @@ public class RecyclerViewPhotos extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         String breed = bundle.getString("breed");
-
-        toolbar.setTitle(breed);
         ResponseApi(breed);
+
+
+        breed = breed.substring(0,1).toUpperCase().concat(breed.substring(1));
+        toolbar.setTitle(breed);
 
 
 
@@ -87,7 +89,7 @@ public class RecyclerViewPhotos extends AppCompatActivity {
                     AdapterPhotos adapterPhotos = new AdapterPhotos(stringList, getApplicationContext());
                     recyclerView.setAdapter(adapterPhotos);
 
-                    Toast.makeText(RecyclerViewPhotos.this, stringList.get(9), Toast.LENGTH_SHORT).show();
+
 
                 }
             }
