@@ -8,18 +8,13 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.cursoandroid.oliveiragabriel.finddog.R;
 import com.cursoandroid.oliveiragabriel.finddog.adapter.AdapterBreed;
 import com.cursoandroid.oliveiragabriel.finddog.call.BreedsService;
 import com.cursoandroid.oliveiragabriel.finddog.model.BreedsModel;
-import com.cursoandroid.oliveiragabriel.finddog.model.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
