@@ -2,6 +2,7 @@ package com.cursoandroid.oliveiragabriel.finddog.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         setSupportActionBar(toolbar);
-        toolbar.setTitle("Dog's breeds");
+        toolbar.setTitle("Breeds");
 
 
         //Retrofit settings
@@ -91,10 +92,11 @@ public class MainActivity extends AppCompatActivity {
                     public void clickItemAdapter(int position) {
 
                         Toast.makeText(MainActivity.this, breeds.getMessageList().get(position), Toast.LENGTH_SHORT).show();
+                        Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this).toBundle();
 
                         Intent intent = new Intent(MainActivity.this, RecyclerViewPhotos.class);
                         intent.putExtra("breed", breeds.getMessageList().get(position));
-                        startActivity(intent);
+                        startActivity(intent, bundle);
 
 
                     }
