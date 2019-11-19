@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void clickItemAdapter(int position) {
 
-                        Toast.makeText(MainActivity.this, breeds.getMessageList().get(position), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, breeds.getMessageList().get(position).substring(0,1).toUpperCase().concat(breeds.getMessageList().get(position).substring(1)), Toast.LENGTH_SHORT).show();
                         Bundle bundle = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this).toBundle();
 
                         Intent intent = new Intent(MainActivity.this, RecyclerViewPhotos.class);

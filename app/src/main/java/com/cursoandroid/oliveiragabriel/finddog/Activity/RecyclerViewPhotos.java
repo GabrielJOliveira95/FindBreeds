@@ -37,6 +37,7 @@ public class RecyclerViewPhotos extends AppCompatActivity {
     private RecyclerView recyclerView;
     private Retrofit retrofit;
     private List<String> stringList;
+    private String breed = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +60,7 @@ public class RecyclerViewPhotos extends AppCompatActivity {
                 .build();
 
         Bundle bundle = getIntent().getExtras();
-        String breed = bundle.getString("breed");
-        ResponseApi(breed);
+        breed = bundle.getString("breed");
 
 
         breed = breed.substring(0,1).toUpperCase().concat(breed.substring(1));
@@ -71,6 +71,14 @@ public class RecyclerViewPhotos extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Bundle bundle = getIntent().getExtras();
+        breed = bundle.getString("breed");
+        ResponseApi(breed);
+
+    }
 
     public void ResponseApi(final String breed){
 
@@ -101,17 +109,15 @@ public class RecyclerViewPhotos extends AppCompatActivity {
         });
 
 
-
-
-
-
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         finish();
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -125,8 +131,7 @@ public class RecyclerViewPhotos extends AppCompatActivity {
         switch (item.getItemId()){
 
             case R.id.back :
-
-                this.finish();
+             startActivity(new Intent(RecyclerViewPhotos.this, MainActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

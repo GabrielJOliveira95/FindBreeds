@@ -80,7 +80,7 @@ public class AdapterBreed extends RecyclerView.Adapter<AdapterBreed.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
 
 
-       myViewHolder.breed.setText(list.get(i));
+       myViewHolder.breed.setText(list.get(i).substring(0,1).toUpperCase().concat(list.get(0).substring(1)));
 
 
 

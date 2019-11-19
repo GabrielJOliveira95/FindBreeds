@@ -6,6 +6,7 @@
         android:id="@+id/back"
         android:title="@string/back"
         app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_revert"
         >
 
     </item>
