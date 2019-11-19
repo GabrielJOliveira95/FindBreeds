@@ -62,10 +62,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+    }
+
+
+
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         ResponseApi();
-
-
-
     }
 
     public void ResponseApi() {
@@ -108,74 +117,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
-
- /*   public class MyTask extends AsyncTask<String, Void, String>{
-        @Override
-        protected String doInBackground(String... strings) {
-
-            String url_string = strings[0];
-            InputStream inputStream = null;
-            BufferedReader bufferedReader = null;
-            InputStreamReader inputStreamReader = null;
-            HttpURLConnection httpURLConnection = null;
-            StringBuffer stringBuffer = new StringBuffer();
-            String line ="";
-            try {
-                URL url = new URL(url_string);
-                httpURLConnection = (HttpURLConnection) url.openConnection();
-                inputStream = httpURLConnection.getInputStream();
-                inputStreamReader = new InputStreamReader(inputStream);
-                bufferedReader = new BufferedReader(inputStreamReader);
-
-                while ((line = bufferedReader.readLine()) != null){
-
-                    stringBuffer.append(line);
-
-                }
-
-
-
-
-
-
-
-
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-            return stringBuffer.toString();
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            try {
-
-                JSONObject jsonObject = new JSONObject(s);
-                JSONObject jsonArray = jsonObject.getJSONObject("message");
-
-
-                while (jsonArray.keys().hasNext()){
-
-                    stringList.add(jsonArray.keys().toString());
-                    AdapterBreed adapterBreed = new AdapterBreed(stringList);
-                    recyclerView.setAdapter(adapterBreed);
-                }
-
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
-
-        }
-    }*/
 
 
 }
