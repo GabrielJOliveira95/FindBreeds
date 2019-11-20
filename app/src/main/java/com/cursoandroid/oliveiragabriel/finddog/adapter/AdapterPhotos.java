@@ -70,7 +70,7 @@ public class AdapterPhotos extends RecyclerView.Adapter<AdapterPhotos.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolderPhotos viewHolderPhotos, int i) {
 
-        Picasso.with(context).load(stringList.get(i)).into(viewHolderPhotos.imageView);
+        Picasso.with(context).load(stringList.get(i)).resize(1500,1500).centerCrop().into(viewHolderPhotos.imageView);
 
     }
 

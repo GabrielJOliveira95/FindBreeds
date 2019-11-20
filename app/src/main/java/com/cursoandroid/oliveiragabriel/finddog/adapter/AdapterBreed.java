@@ -43,9 +43,11 @@ public class AdapterBreed extends RecyclerView.Adapter<AdapterBreed.MyViewHolder
 
         TextView breed;
 
+
         public MyViewHolder(@NonNull View itemView, final OnClickAdapter onClickAdapter) {
             super(itemView);
             breed = itemView.findViewById(R.id.breed_text_view);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
